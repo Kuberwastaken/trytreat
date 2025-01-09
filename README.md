@@ -1,5 +1,5 @@
 
-![Treat_Banner](images\Treat_Web_Banner.png)
+![Treat_Banner](https://raw.githubusercontent.com/Kuberwastaken/gettreated/refs/heads/main/images/Treat_Web_Banner.png)
 
 <h1 align="center">
   Trigger Recognition for Enjoyable and Appropriate Television Web
