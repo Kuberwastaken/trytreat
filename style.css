@@ -1,0 +1,50 @@
+/* Apply a reset to remove default margins/paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure html and body elements take up the full screen */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Make iframe fill the screen */
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    overflow: auto; /* Ensure the iframe content can scroll */
+}
+
+/* Themed scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;  /* Width of the scrollbar */
+    height: 12px; /* Height for horizontal scrollbar */
+}
+
+/* Scrollbar track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Translucent white */
+    border-radius: 10px;
+}
+
+/* Scrollbar thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background: #6366f1; /* Your specified color */
+    border-radius: 10px;
+    border: 3px solid rgba(255, 255, 255, 0.3); /* Optional: adds a translucent border to thumb */
+}
+
+/* Scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #4e5ff7; /* Slightly darker on hover */
+}
