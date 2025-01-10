@@ -19,7 +19,7 @@ While processing times may be a bit longer, the accessibility and convenience of
 
 ## Check it Out!
 <p align="center">
-  <a href="https://kuberwastaken.github.io/gettreated/" target="_blank">Try out TREAT-WEB here</a>
+  <a href="https://trytreat.tech/" target="_blank">Try out TREAT-WEB here</a>
 </p>
 
 
