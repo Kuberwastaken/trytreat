@@ -67,7 +67,3 @@ TREAT is open-source and always looking to improve. Feel free to contribute by a
 - **Hugging Face**: For making Hugging Face Spaces an option to make AI model hosting accessible for all.
 
 - **Parasite (2019)**: For that unexpected jumpscare that ruined my appetite, inspiring the creation of TREAT.
-
-## License
-
-This project is licensed under the [Apache 2.0 License](https://github.com/Kuberwastaken/TREAT/blob/main/LICENSE).
