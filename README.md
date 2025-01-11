@@ -19,7 +19,7 @@ While processing times may be a bit longer, the accessibility and convenience of
 
 ## Check it Out!
 <p align="center">
-  <a href="https://kuberwastaken.github.io/gettreated/" target="_blank">Try out TREAT-WEB here</a>
+  <a href="https://trytreat.tech/" target="_blank">Try out TREAT-WEB here</a>
 </p>
 
 
@@ -67,7 +67,3 @@ TREAT is open-source and always looking to improve. Feel free to contribute by a
 - **Hugging Face**: For making Hugging Face Spaces an option to make AI model hosting accessible for all.
 
 - **Parasite (2019)**: For that unexpected jumpscare that ruined my appetite, inspiring the creation of TREAT.
-
-## License
-
-This project is licensed under the [Apache 2.0 License](https://github.com/Kuberwastaken/TREAT/blob/main/LICENSE).
