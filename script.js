@@ -1,4 +1,11 @@
-// Adjust iframe size to match the window's aspect ratio
+// Hero section transition
+document.getElementById('try-now-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('.landing-page').classList.add('hidden');
+    document.querySelector('.main-app').classList.add('visible');
+});
+
+// Iframe size adjustment
 function adjustIframeSize() {
     const iframe = document.getElementById('huggingFaceIframe');
     const viewportWidth = window.innerWidth;
@@ -8,6 +15,6 @@ function adjustIframeSize() {
     iframe.style.height = `${viewportHeight}px`;
 }
 
-// Adjust size on page load and when the window is resized
+// Event listeners for iframe adjustment
 window.addEventListener('load', adjustIframeSize);
 window.addEventListener('resize', adjustIframeSize);

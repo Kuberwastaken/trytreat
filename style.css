@@ -1,50 +1,331 @@
-/* Apply a reset to remove default margins/paddings */
+:root {
+    --primary: #6a0dad;
+    --primary-dark: #4b0082;
+    --text: #ffffff;
+    --bg-dark: #0a0a0a;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Ensure html and body elements take up the full screen */
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    
 }
 
-/* Make iframe fill the screen */
-iframe {
+/* Landing page container */
+.landing-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(106, 13, 173, 0.2) 0%, 
+        rgba(0, 0, 0, 1) 70%);
+    transition: transform 0.5s ease-out;
+}
+
+/* Add this to ensure smooth transitions */
+.landing-page.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-out;
+}
+
+.main-app.visible {
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    border: none;
-    overflow: auto; /* Ensure the iframe content can scroll */
+    width: 100%;
+    height: 100%;
+    background: url('images/Purple-Treats.png') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: -1;
 }
 
-/* Themed scrollbar styles */
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Darken with gradient */
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    position: center;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #fff, #e9d5ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+}
+
+.hero-subtitle {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin-bottom: 2rem;
+    color: #e9d5ff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow below the text */
+
+}
+
+.hero-description {
+    max-width: 800px;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    margin-bottom: 3rem;
+    color: #e9d5ff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow below the text */
+
+}
+
+/* Button styles */
+.hero-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center; /* Center align buttons on mobile */
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto; /* Ensure buttons are centered */
+    }
+}
+
+.hero-btn {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.primary-btn {
+    background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+    color: white;
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(106, 13, 173, 0.4);
+    background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+    background-size: 200% 200%;
+    animation: gradientAnimation 4s ease infinite;
+    animation: cyberpunkBorder 1.5s infinite;
+}
+
+.secondary-btn {
+    background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: 3px solid var(--primary-dark); /* Add border */
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3);
+}
+
+.secondary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(106, 13, 173, 0.4);
+    background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+    background-size: 200% 200%;
+    animation: gradientAnimation 4s ease infinite;
+    animation: cyberpunkBorder 1.5s infinite;
+}
+
+@keyframes cyberpunkBorder {
+    0% {
+        box-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 15px var(--primary), 0 0 20px var(--primary);
+    }
+    50% {
+        box-shadow: 0 0 10px var(--primary-dark), 0 0 20px var(--primary-dark), 0 0 30px var(--primary-dark), 0 0 40px var(--primary-dark);
+    }
+    100% {
+        box-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 15px var(--primary), 0 0 20px var(--primary);
+    }
+}
+
+/* Features Section */
+.features {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom,
+        transparent,
+        rgba(106, 13, 173, 0.1),
+        transparent);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #e9d5ff;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: rgba(106, 13, 173, 0.1);
+    border: 1px solid rgba(106, 13, 173, 0.3);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Scrollbar styling */
 ::-webkit-scrollbar {
-    width: 12px;  /* Width of the scrollbar */
-    height: 12px; /* Height for horizontal scrollbar */
+    width: 10px;
 }
 
-/* Scrollbar track (background of the scrollbar) */
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1); /* Translucent white */
-    border-radius: 10px;
+    background: var(--bg-dark);
 }
 
-/* Scrollbar thumb (the draggable part of the scrollbar) */
 ::-webkit-scrollbar-thumb {
-    background: #6366f1; /* Your specified color */
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary));
     border-radius: 10px;
-    border: 3px solid rgba(255, 255, 255, 0.3); /* Optional: adds a translucent border to thumb */
+    border: 2px solid var(--bg-dark);
+    min-height: 20px; /* Set a minimum height for the thumb */
 }
 
-/* Scrollbar thumb on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #4e5ff7; /* Slightly darker on hover */
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary-dark));
+}
+
+/* About Section */
+.about {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.founder {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.founder-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary);
+}
+
+.founder-content {
+    flex: 1;
+}
+
+.founder-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #e9d5ff;
+}
+
+/* Main App Content */
+.main-app {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-dark);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.main-app.visible {
+    z-index: 1000;
+    opacity: 1;
+}
+
+.iframe-container {
+    width: 100%;
+    height: 100vh;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .founder {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .founder-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }

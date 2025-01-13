@@ -1,42 +1,93 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TREAT</title>
-
-    <!-- SEO Enhancements -->
-    <meta name="description" content="An AI web app to Analyze Movie and Show scripts for Potential Triggering Content">
-    <meta name="keywords" content="Kuber Mehta, TryTreat, Try Treat, Treat AI, Hugging Face, Movies, TV Shows, Shows, AI, AI tools, artificial intelligence, AI projects, personal project, TREAT, TREAT AI, Trigger Recognition, Trigger Recognition for Enjoyable and Appropiate Television, Content Scanner">
-    <meta name="author" content="Kuber Mehta">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="TREAT by Kuber Mehta">
-    <meta property="og:description" content="An AI web application Built with Flask and Python to Analyze Movie and Show scripts for Potential Triggering Content">
-    <meta property="og:image" content="https://trytreat.tech/images/Treat_Web_Social_Banner.png">
-    <meta property="og:url" content="https://trytreat.tech">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TREAT by Kuber Mehta">
-    <meta name="twitter:description" content="An AI web application Built with Flask and Python to Analyze Movie and Show scripts for Potential Triggering Content">
-    <meta name="twitter:image" content="https://trytreat.tech/images/Treat_Web_Social_Banner.png">
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="images/site.webmanifest">
-
+    <title>TREAT - Content Analysis AI</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-
 <body>
-    <!-- Add scrolling="yes" to force the iframe to display a scrollbar -->
-    <iframe id="huggingFaceIframe" src="https://kuberwastaken-treat.hf.space/"
-            frameborder="0" scrolling="yes"></iframe>
+    <!-- Landing Page Content -->
+    <div class="landing-page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">TREAT</h1>
+                <h2 class="hero-subtitle">Trigger Recognition for Enjoyable and Appropriate Television</h2>
+                <p class="hero-description">
+                    Experience the future of content analysis with our AI-powered platform. 
+                    TREAT helps you identify potential triggers in movies and shows, 
+                    ensuring a more comfortable and informed entertainment experience.
+                </p>
+                <div class="hero-buttons">
+                    <button class="hero-btn primary-btn" id="try-button">Try it Now</button>
+                    <a href="https://github.com/Kuberwastaken/TREAT" class="hero-btn secondary-btn" target="_blank">Run Locally</a>
+                </div>
+            </div>
+        </section>
 
-    <script src="script.js"></script>
+        <!-- Features Section -->
+        <section class="features">
+            <h2 class="section-title">Why Choose TREAT</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced machine learning algorithms analyze content for potential triggers with high accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Comprehensive Coverage</h3>
+                    <p>Identifies various types of potentially triggering content across different categories and themes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>User-Friendly Interface</h3>
+                    <p>Simple and intuitive design makes it easy to get the information you need quickly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2 class="section-title">Meet the Founder</h2>
+            <div class="founder">
+                <img src="images\kuber-picture.jpg" alt="Kuber Mehta" class="founder-image">
+                <div class="founder-content">
+                    <h3 class="founder-name">Kuber Mehta</h3>
+                    <p>Pioneering the future of content awareness through AI innovation. As the creator of TREAT, Kuber combines cutting-edge technology with social responsibility to make entertainment more accessible and enjoyable for everyone.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Main App Content -->
+    <div class="main-app">
+        <div class="iframe-container">
+            <iframe src="https://kuberwastaken-treat.hf.space/" frameborder="0" scrolling="yes"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Handle try button click
+        document.getElementById('try-button').addEventListener('click', () => {
+            document.querySelector('.landing-page').classList.add('hidden');
+            document.querySelector('.main-app').classList.add('visible');
+        });
+
+        // Adjust iframe size
+        function adjustIframeSize() {
+            const iframe = document.querySelector('iframe');
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            iframe.style.width = `${viewportWidth}px`;
+            iframe.style.height = `${viewportHeight}px`;
+        }
+
+        window.addEventListener('load', adjustIframeSize);
+        window.addEventListener('resize', adjustIframeSize);
+    </script>
 </body>
 </html>
