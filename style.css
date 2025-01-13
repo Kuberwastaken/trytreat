@@ -388,15 +388,15 @@ body, html {
     }
 }
 
-/* Hide scrollbar on mobile devices */
+/* Hide scrollbar but keep scrolling functionality */
 @media (max-width: 768px) {
     body, html {
-        overflow: hidden;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
     }
 
-    /* For specific elements if needed */
-    .landing-page, .main-app, .page-content {
-        overflow: hidden;
+    body::-webkit-scrollbar, html::-webkit-scrollbar {
+        display: none;  /* Chrome, Safari, and Opera */
     }
 }
 
