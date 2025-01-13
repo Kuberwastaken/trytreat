@@ -18,3 +18,16 @@ function adjustIframeSize() {
 // Event listeners for iframe adjustment
 window.addEventListener('load', adjustIframeSize);
 window.addEventListener('resize', adjustIframeSize);
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    const heroSection = document.querySelector('.hero');
+    const heroHeight = heroSection.offsetHeight;
+
+    if (window.scrollY > heroHeight) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});

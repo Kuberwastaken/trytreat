@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TREAT - Content Analysis AI</title>
+    <title>TREAT</title>
 
-        <!-- SEO Enhancements -->
-        <meta name="description" content="An AI web app to Analyze Movie and Show scripts for Potential Triggering Content">
-        <meta name="keywords" content="Kuber Mehta, TryTreat, Try Treat, Treat AI, Hugging Face, Movies, TV Shows, Shows, AI, AI tools, artificial intelligence, AI projects, personal project, TREAT, TREAT AI, Trigger Recognition, Trigger Recognition for Enjoyable and Appropiate Television, Content Scanner">
-        <meta name="author" content="Kuber Mehta">
-    
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="TREAT by Kuber Mehta">
-        <meta property="og:description" content="An AI web application Built with Flask and Python to Analyze Movie and Show scripts for Potential Triggering Content">
-        <meta property="og:image" content="https://trytreat.tech/images/Treat_Web_Social_Banner.png">
-        <meta property="og:url" content="https://trytreat.tech">
-        <meta property="og:type" content="website">
-    
-        <!-- Twitter Card Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="TREAT by Kuber Mehta">
-        <meta name="twitter:description" content="An AI web application Built with Flask and Python to Analyze Movie and Show scripts for Potential Triggering Content">
-        <meta name="twitter:image" content="https://trytreat.tech/images/Treat_Web_Social_Banner.png">
-    
-        <!-- Favicons -->
-        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-        <link rel="manifest" href="images/site.webmanifest">
-    
+    <!-- SEO Enhancements -->
+    <meta name="description" content="An AI web app to Analyze Movie and Show scripts for Potential Triggering Content">
+    <meta name="keywords" content="Kuber Mehta, TryTreat, Try Treat, Treat AI, Hugging Face, Movies, TV Shows, Shows, AI, AI tools, artificial intelligence, AI projects, personal project, TREAT, TREAT AI, Trigger Recognition, Trigger Recognition for Enjoyable and Appropiate Television, Content Scanner">
+    <meta name="author" content="Kuber Mehta">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TREAT by Kuber Mehta">
+    <meta property="og:description" content="An AI web application Built with Flask and Python to Analyze Movie and Show scripts for Potential Triggering Content">
+    <meta property="og:image" content="https://trytreat.tech/images/Treat_Web_Social_Banner.png">
+    <meta property="og:url" content="https://trytreat.tech">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TREAT by Kuber Mehta">
+    <meta name="twitter:description" content="An AI web application Built with Flask and Python to Analyze Movie and Show scripts for Potential Triggering Content">
+    <meta name="twitter:image" content="https://trytreat.tech/images/Treat_Web_Social_Banner.png">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contribute.html">Contribute</a></li>
+            <li><a href="safety.html">Safety</a></li>
+            <li><a href="mission.html">Mission</a></li>
+        </ul>
+    </nav>
+
     <!-- Landing Page Content -->
     <div class="landing-page">
         <!-- Hero Section -->
@@ -78,10 +88,18 @@
         <section class="about">
             <h2 class="section-title">Meet the Founder</h2>
             <div class="founder">
-                <img src="images\kuber-picture.jpg" alt="Kuber Mehta" class="founder-image">
+                <img src="images/kuber-picture.jpg" alt="Kuber Mehta" class="founder-image">
                 <div class="founder-content">
                     <h3 class="founder-name">Kuber Mehta</h3>
                     <p>Pioneering the future of content awareness through AI innovation. As the creator of TREAT, Kuber combines cutting-edge technology with social responsibility to make entertainment more accessible and enjoyable for everyone.</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/kubermehta/" target="_blank">
+                            <img src="https://img.shields.io/badge/-LinkedIn-6a0dad?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" class="social-icon">
+                        </a>
+                        <a href="https://github.com/Kuberwastaken" target="_blank">
+                            <img src="https://img.shields.io/badge/-GitHub-6a0dad?style=flat-square&logo=github&logoColor=white" alt="GitHub" class="social-icon">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -90,10 +108,11 @@
     <!-- Main App Content -->
     <div class="main-app">
         <div class="iframe-container">
-            <iframe src="https://kuberwastaken-treat.hf.space/" frameborder="0" scrolling="yes"></iframe>
+            <iframe id="huggingFaceIframe" src="https://kuberwastaken-treat.hf.space/" frameborder="0" scrolling="yes"></iframe>
         </div>
     </div>
 
+    <!-- JavaScript to handle button click -->
     <script>
         // Handle try button click
         document.getElementById('try-button').addEventListener('click', () => {
@@ -101,9 +120,9 @@
             document.querySelector('.main-app').classList.add('visible');
         });
 
-        // Adjust iframe size
+        // Iframe size adjustment
         function adjustIframeSize() {
-            const iframe = document.querySelector('iframe');
+            const iframe = document.getElementById('huggingFaceIframe');
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
 
@@ -111,6 +130,7 @@
             iframe.style.height = `${viewportHeight}px`;
         }
 
+        // Event listeners for iframe adjustment
         window.addEventListener('load', adjustIframeSize);
         window.addEventListener('resize', adjustIframeSize);
     </script>
