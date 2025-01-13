@@ -151,6 +151,12 @@ body {
     box-shadow: 0 6px 20px rgba(106, 13, 173, 0.4);
 }
 
+@media (max-width: 768px) {
+    .social-icons {
+        justify-content: center; /* Center the icons on mobile */
+    }
+}
+
 /* Button styles */
 .hero-buttons {
     display: flex;
@@ -375,6 +381,18 @@ body, html {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .navbar ul li a {
+        font-size: 0.9rem; /* Adjust font size for mobile */
+        padding: 0.5rem 1rem;
+    }
+}
 
 /* Features Section */
 .features {
