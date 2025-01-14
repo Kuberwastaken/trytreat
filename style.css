@@ -451,10 +451,23 @@ body, html {
     border-radius: 10px;
     border: 2px solid var(--bg-dark);
     min-height: 20px; /* Set a minimum height for the thumb */
+    animation: scrollbarThumbAnimation 5s ease infinite; /* Apply the animation */
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(45deg, var(--primary-dark), var(--primary-dark));
+}
+
+@keyframes scrollbarThumbAnimation {
+    0% {
+        background: linear-gradient(45deg, #6a0dad, #4b0082);
+    }
+    50% {
+        background: linear-gradient(45deg, #4b0082, #6a0dad);
+    }
+    100% {
+        background: linear-gradient(45deg, #6a0dad, #4b0082);
+    }
 }
 
 /* About Section */
