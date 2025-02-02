@@ -117,20 +117,56 @@ body {
 /* Button styles */
 .hero-buttons {
     display: flex;
-    justify-content: center; /* Center the buttons horizontally */
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
     margin-bottom: 4rem;
 }
 
+.button-row {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
 @media (max-width: 768px) {
-    .hero-buttons {
+    .button-row {
         flex-direction: column;
-        align-items: center; /* Center align buttons on mobile */
+        align-items: center;
         width: 100%;
         max-width: 300px;
-        margin: 0 auto; /* Ensure buttons are centered */
     }
-} 
+    
+    .hero-buttons {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 4rem auto;
+    }
+}
+
+.hero-btn.golden-btn {
+    background: linear-gradient(45deg, #FFD700, #DAA520);
+    color: black;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.hero-btn.golden-btn:hover {
+    background: linear-gradient(45deg, #DAA520, #FFD700);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    animation: goldenBorder 1.5s infinite;
+}
+
+@keyframes goldenBorder {
+    0% {
+        box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+    }
+    50% {
+        box-shadow: 0 0 10px #DAA520, 0 0 20px #DAA520, 0 0 30px #DAA520;
+    }
+    100% {
+        box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+    }
+}
 
 /* Social Icons */
 .social-icons {

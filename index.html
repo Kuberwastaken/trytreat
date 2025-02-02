@@ -70,8 +70,11 @@
                     ensuring a more comfortable and informed entertainment experience.
                 </p>
                 <div class="hero-buttons">
-                    <button class="hero-btn primary-btn" id="try-button">Try it Now</button>
-                    <a href="https://github.com/Kuberwastaken/TREAT" class="hero-btn secondary-btn" target="_blank">Run Locally</a>
+                    <div class="button-row">
+                        <button class="hero-btn primary-btn" id="try-button">Try it Now</button>
+                        <button class="hero-btn golden-btn" id="try-r1-button">Try TREAT R1</button>
+                        <a href="https://github.com/Kuberwastaken/TREAT" class="hero-btn secondary-btn" target="_blank">Run Locally</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -125,10 +128,18 @@
 
     <!-- JavaScript to handle button click -->
     <script>
-        // Handle try button click
+        // Handle main TREAT button click
         document.getElementById('try-button').addEventListener('click', () => {
             document.querySelector('.landing-page').classList.add('hidden');
             document.querySelector('.main-app').classList.add('visible');
+            document.getElementById('huggingFaceIframe').src = 'https://kuberwastaken-treat.hf.space/';
+        });
+
+        // Handle TREAT R1 button click
+        document.getElementById('try-r1-button').addEventListener('click', () => {
+            document.querySelector('.landing-page').classList.add('hidden');
+            document.querySelector('.main-app').classList.add('visible');
+            document.getElementById('huggingFaceIframe').src = 'https://kuberwastaken-treat-r1.hf.space/';
         });
 
         // Iframe size adjustment
@@ -145,5 +156,6 @@
         window.addEventListener('load', adjustIframeSize);
         window.addEventListener('resize', adjustIframeSize);
     </script>
+
 </body>
 </html>
