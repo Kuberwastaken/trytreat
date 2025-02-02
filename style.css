@@ -123,48 +123,39 @@ body {
     margin-bottom: 4rem;
 }
 
+/* Update button spacing and golden button styles */
 .button-row {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
+    margin: 0 auto;
 }
 
+/* Ensure golden button styles override any defaults */
+.hero-btn.golden-btn {
+    background: linear-gradient(45deg, #FFD700, #DAA520) !important;
+    color: black !important;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3) !important;
+    border: none !important;
+}
+
+.hero-btn.golden-btn:hover {
+    background: linear-gradient(45deg, #DAA520, #FFD700) !important;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
+    animation: goldenBorder 1.5s infinite !important;
+}
+
+/* Ensure buttons don't collapse on mobile */
 @media (max-width: 768px) {
     .button-row {
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        max-width: 300px;
+        gap: 1rem;
     }
     
-    .hero-buttons {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto 4rem auto;
-    }
-}
-
-.hero-btn.golden-btn {
-    background: linear-gradient(45deg, #FFD700, #DAA520);
-    color: black;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-}
-
-.hero-btn.golden-btn:hover {
-    background: linear-gradient(45deg, #DAA520, #FFD700);
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-    animation: goldenBorder 1.5s infinite;
-}
-
-@keyframes goldenBorder {
-    0% {
-        box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
-    }
-    50% {
-        box-shadow: 0 0 10px #DAA520, 0 0 20px #DAA520, 0 0 30px #DAA520;
-    }
-    100% {
-        box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+    .hero-btn {
+        width: 200px;
+        margin: 0.5rem 0;
     }
 }
 
