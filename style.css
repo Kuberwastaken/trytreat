@@ -119,43 +119,59 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 4rem;
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
 }
 
-/* Update button spacing and golden button styles */
 .button-row {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
-    margin: 0 auto;
+    width: 100%;
 }
 
-/* Ensure golden button styles override any defaults */
+.hero-btn {
+    min-width: 160px;
+}
+
 .hero-btn.golden-btn {
     background: linear-gradient(45deg, #FFD700, #DAA520) !important;
     color: black !important;
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3) !important;
     border: none !important;
+    transition: all 0.3s ease;
 }
 
 .hero-btn.golden-btn:hover {
     background: linear-gradient(45deg, #DAA520, #FFD700) !important;
     box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4) !important;
-    animation: goldenBorder 1.5s infinite !important;
+    transform: translateY(-2px);
 }
 
-/* Ensure buttons don't collapse on mobile */
 @media (max-width: 768px) {
     .button-row {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
     }
-    
+
     .hero-btn {
-        width: 200px;
-        margin: 0.5rem 0;
+        width: 80%;
+        max-width: 300px;
+        margin: 0.25rem 0;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        padding: 0 1rem;
+    }
+
+    .hero-btn.golden-btn {
+        width: 80%;
+        max-width: 300px;
     }
 }
 
